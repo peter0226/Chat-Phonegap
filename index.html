@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    
+    <!-- ARCHIVOS CSS -->
+    <link rel="stylesheet" href="estilos.css">
+
+    <!-- FUNCTIONS CHAT -->
+    <script type="text/javascript" src="Functions.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+
+</head>
+<body>
+    <header class="bar_nav" onClick="ocultarMenu('contenedor2'), ocultarMenus('adjuntarDiv2','adjuntarDiv')">
+
+        <div><a href="" style="text-decoration: none;"><span class="Marca" id="Marca" onClick="ocultarMenu('contenedor')">PearSoft</span></a></div>
+        <div class="alinear">
+
+            <span class="icon_puntos derecha" onClick="mostrarMenu('contenedor')">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span class="icon_buscar derecha" onClick="mostrarMenu('buscador'),modificar2()">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        </div>
+
+        <div class="contenedor" id="contenedor">
+
+            <ul class="list">
+                <li class="item"><a href="#">Silenciar</a></li>
+                <li class="item"><a href="#">Chat Clientes</a></li>
+                <li class="item"><a href="#">Chat Empleados</a></li>
+                <li class="item"><a href="#">Nuevo Grupo</a></li>
+                <li class="item"><a href="">Ajustes</a></li>
+            </ul>
+
+        </div>
+
+        <div class="buscador" id="buscador">
+
+            <form>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="icon_flecha-izq" onClick="ocultarMenu('buscador')"> </span>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" name="busqueda" placeholder="Buscar...">
+
+            </form>
+        </div>
+
+    </header>
+
+    <div class="col" onClick="ocultarMenus('contenedor','buscador')">
+        <div class="col-s-1" id="col-s-1">
+            <div class="col-3">&nbsp;&nbsp;</div>
+            <div class="filas">
+                <div class="normal">
+                    <h4 class="espacio wh">Contactos</h4>
+                    <br />
+                </div>
+                <div class="normal2 scroll" id="normal2" onload="ajax();">
+                    
+                </div>
+            </div>
+
+        </div>
+        <div class="pesta bar_nav" onClick="ocultarMenu('contenedor2')" >
+            <input class="pestana-button" type="submit" value="" onclick="modificar(), ocultarMenus('adjuntarDiv2','adjuntarDiv')">
+            &nbsp;&nbsp;&nbsp;&nbsp;
+
+        </div>
+        <div class="col-s-2" id="contenido">
+            <div class="bar_nav" onClick="ocultarMenus('adjuntarDiv2','adjuntarDiv')">
+                <div class="alinear3"></div>
+                <div class="col-l"><span class="titulo" id="titulo" onClick="ocultarMenu('contenedor2')">Inicio</span></div>
+                <span class="icon_email derecha">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class="icon_puntos derecha" onClick="mostrarMenu('contenedor2')">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                
+
+                <div class="contenedor2" id="contenedor2">
+
+                    <ul class="list">
+                        <li class="item"><a href="#">Silenciar</a></li>
+                        <li class="item"><a href="#">Chat Clientes</a></li>
+                        <li class="item"><a href="#">Chat Empleados</a></li>
+                        <li class="item"><a href="#">Nuevo Grupo</a></li>
+                        <li class="item"><a href="">Ajustes</a></li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="chat" onClick="ocultarMenu('contenedor2')" >
+                <div id="cuerpo" class="cuerpo" onClick="ocultarMenus('adjuntarDiv2','adjuntarDiv')" onload="ajax2();">
+
+                    <div id="datos-chat">
+                        <span style="color: #C9D952">Pedro:</span>
+                        <span style="float: right;">3:15 pm</span>
+                        <br>
+                        <span style="color: #848484">Hola tengo una duda</span>
+
+
+
+                        <div id="chat">
+
+                        </div>
+                        
+                         
+
+                        </div>
+
+                        <div id="agregar"></div>
+                    </div>
+
+                    <div class="envio" onclick="modificar2()" onsubmit="ocultarMenus('adjuntarDiv2','adjuntarDiv')">
+                        <form>
+                            <span class="icon_emoticon" onClick="mostrarMenus('adjuntarDiv2','adjuntarDiv')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <textarea type="" name="mensaje" id="mensaje" placeholder="Escribe un mensaje" onkeyup="pulsar(event)"></textarea>
+                            <span class="icon_send  derecha" style="color: #04bfad;" onclick="enviar()"></span>
+                            <span class="icon_camera-retro derecha"></span>
+                            <span class="icon_clip derecha" onClick="mostrarMenus('adjuntarDiv','adjuntarDiv2')" style="margin-left:0;"></span>
+
+
+
+                        </form>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="adjuntarDiv" id="adjuntarDiv">
+            <div class="margen">
+                <span class="icon_documento adjuntarIcons" style="color:tomato;"></span>
+                <span class="icon_audio adjuntarIcons" style="color:cornflowerblue;"></span>
+                <span class="icon_imagen adjuntarIcons" style="color:orange;"></span>
+
+                <span class="icon_mapa adjuntarIcons" style="color:khaki"></span>
+                <span class="icon_camera-retro2 adjuntarIcons" style="color:#C9D952;"></span>
+                <span class="icon_usuario adjuntarIcons" style="color:mediumpurple;"></span>
+            </div>
+
+        </div>
+
+        <div class="adjuntarDiv2 texto" id="adjuntarDiv2">
+
+
+            </div>
+
+    </body>
+    </html>
